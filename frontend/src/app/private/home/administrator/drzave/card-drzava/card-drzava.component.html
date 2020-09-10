@@ -1,0 +1,33 @@
+<mat-tab-group>
+    <mat-tab label="Drzava">
+        <mat-card class="example-card"> 
+            <mat-card-header>
+                <mat-card-title>
+                    <h1>Id:  {{drzava.id}}
+                    </h1>
+                </mat-card-title>
+                <mat-card-subtitle>
+                    <h2>
+                    Naziv: {{drzava.naziv}}
+                    </h2>
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <h3>Mesta:</h3>
+                <div class="list-cenatr">
+                    <ul class="listMesta" *ngFor="let mesto of drzava.mesta">
+                        <div>
+                            <h3>{{mesto.naziv}}</h3>
+                        </div>
+                    </ul>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button class="dugme" mat-raised-button color="primary" routerLink="/private-home/drzave">Nazad</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-tab>
+    <mat-tab label="Edit Drzavu">
+        <app-edit-drzava [drzava]="drzava"></app-edit-drzava>
+    </mat-tab>
+</mat-tab-group>

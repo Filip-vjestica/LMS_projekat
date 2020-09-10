@@ -1,0 +1,116 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <button class="menuBtn" mat-button [matMenuTriggerFor]="menuAdmin">Admin</button>
+      <mat-menu #menuAdmin="matMenu">
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/drzave">Drzave</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/mesta">Mesta</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/adrese">Adrese</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/univerziteti">Univerziteti</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/fakulteti">Fakulteti</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/studijski-programi">Studijski Programi</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/godine-studija">Godine Studija</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/predmeti">Predmeti</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/ishodi">Ishodi</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/studenti-na-godini">Studenti Na Godinama</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/nastavnici">Nastavnici</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/registrovani-korisnici">Registrovani Korisnici</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/nastavnici-na-realizacijama">Nastavnici Na Realizacijama</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/zvanja">Zvanja</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/tipovi-zvanja">Tipovi Zvanja</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/naucne-oblasti">Naucne Oblasti</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/realizacije-predmeta">Realizacije Predmeta</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/pohadjanja-predmeta">Pohadjanja Predmeta</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/user-permissions">User Permissions</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/permissions">Permissions</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/adrese-univerziteti">Adrese Univerziteti</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/adrese-fakulteti">Adrese Fakulteti</a>
+        </button>
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/private-home/adrese-registrovani-korisnici">Adrese Registrovani Korisnici</a>
+        </button>
+      </mat-menu>
+      <button class="menuBtn" mat-button [matMenuTriggerFor]="menuAdministrativnoOsoblje">Administrativno Osoblje</button>
+      <mat-menu #menuAdministrativnoOsoblje="matMenu">
+        <button mat-menu-item>
+          
+        </button>
+      </mat-menu>
+      <button class="menuBtn" mat-button [matMenuTriggerFor]="menuNastavnik">Nastavnik</button>
+      <mat-menu #menuNastavnik="matMenu">
+        <button mat-menu-item>
+          
+        </button>
+      </mat-menu>
+      <button class="menuBtn" mat-button [matMenuTriggerFor]="menuStudent">Student</button>
+      <mat-menu #menuStudent="matMenu">
+        <button mat-menu-item>
+          
+        </button>
+      </mat-menu>
+      <button class="menuBtn" mat-button >Home</button>
+      <button class="menuBtn" mat-button >Logout</button>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>studentska-sluzba-admin</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,33 @@
+<mat-tab-group>
+    <mat-tab label="Mesto">
+        <mat-card class="example-card"> 
+            <mat-card-header>
+                <mat-card-title>
+                    <h1>Id: {{mesto.id}}. Naziv: {{mesto.naziv}}
+                    </h1>
+                </mat-card-title>
+                <mat-card-subtitle>
+                    <h2>
+                        Drzava: {{mesto.drzava.naziv}}
+                    </h2>
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <h3>Adrese:</h3>
+                <div class="list-cenatr">
+                    <ul class="listAdrese" *ngFor="let adresa of mesto.adrese">
+                        <div>
+                            <h3>{{adresa.ulica}} {{adresa.broj}}</h3>
+                        </div>
+                    </ul>
+                </div>
+            </mat-card-content>
+            <mat-card-actions>
+                <button class="dugme" mat-raised-button color="primary" routerLink="/private-home/mesta">Nazad</button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-tab>
+    <mat-tab label="Edit Mesto">
+        <app-edit-mesto [mesto]="mesto"></app-edit-mesto>
+    </mat-tab>
+</mat-tab-group>

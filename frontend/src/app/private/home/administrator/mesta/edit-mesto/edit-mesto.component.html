@@ -1,0 +1,32 @@
+<form class="forma" [formGroup]="mestoForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="mesto-card">
+    <mat-card-header>
+      <mat-card-title>Edit Mesto</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Naziv" formControlName="naziv">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <mat-select formControlName="drzava" required>
+              <mat-option *ngFor="let drzava of drzave" [value]="drzava" selected>
+                {{drzava.id}}. {{drzava.naziv}}
+              </mat-option>
+            </mat-select>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

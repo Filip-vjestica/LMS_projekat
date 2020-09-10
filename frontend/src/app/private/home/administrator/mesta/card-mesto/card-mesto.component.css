@@ -1,0 +1,20 @@
+.example-card {
+    margin: 25px;
+    text-align: center;
+  }
+
+.listAdrese {
+    list-style: none;
+    display: inline-block;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.dugme {
+    width: 100%;
+}
+
+.list-cenatr {
+    width: 100%;
+    text-align: center;
+}
